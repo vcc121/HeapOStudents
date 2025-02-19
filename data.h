@@ -1,6 +1,8 @@
 #ifndef DATA_H_EXISTS
 #define DATA_H_EXISTS
 
+#include <string>
+
 class Data {
 	private:
 		int day;
