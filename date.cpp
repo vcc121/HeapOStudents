@@ -8,4 +8,4 @@ Date::Date(){
 	dateString = "";
 }
 
-void Data::init(std::dateString)
+void Date::init(std::dateString)
