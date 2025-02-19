@@ -1,5 +1,5 @@
 #include "date.h"
-#include <iostream>
+#include <sstream>
 
 Date::Date(){
 	day = 0;
@@ -8,3 +8,4 @@ Date::Date(){
 	dateString = "";
 }
 
+void Data::init(std::dateString)
