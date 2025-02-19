@@ -1,9 +1,9 @@
-#ifndef DATA_H_EXISTS
-#define DATA_H_EXISTS
+#ifndef DATE_H_EXISTS
+#define DATE_H_EXISTS
 
 #include <string>
 
-class Data {
+class Date {
 	private:
 		int day;
 		int month;
