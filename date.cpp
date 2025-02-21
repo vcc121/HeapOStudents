@@ -24,3 +24,12 @@ void Date::init(std::dateString){
 	ss << tDay << " " << tMonth << " " << tYear;
     ss >> day >> month >> year;
 }
+
+void Date::printDate(){
+	std::string months[] = {
+        "Null", "January", "February", "March", "April", "May", "June", 
+        "July", "August", "September", "October", "November", "December"
+    };
+	std::cout << months[month] << " ";
+	std::cout << day << ", " << year << std::end1;
+}
