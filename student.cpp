@@ -37,7 +37,7 @@ void Student::printStudent() {
     
     std::cout << "Credits: " << credits << std::endl;
     std::cout << "____________________";
-	std::cout << std::endl
+	std::cout << std::endl;
 }
 
 std::string Student::getLastFirst() {
@@ -47,9 +47,6 @@ std::string Student::getLastFirst() {
     return ss.str();
 }
 
-std::string Student::getLastName() {
-    return lastName;
-}
 
 void Student::init(std::string studentString) {
     std::stringstream ss(studentString);
