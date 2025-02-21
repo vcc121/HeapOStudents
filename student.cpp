@@ -26,9 +26,8 @@ Student::~Student(){
 }
 
 void Student::printStudent() {
-    std::cout << firstName << " " << lastName << " ";
+    std::cout << firstName << " " << lastName << std::endl;
     address->printAddress();
-    std::cout << std::endl;
     
     std::cout << "DOB: ";
     birthDate->printDate();
@@ -37,7 +36,8 @@ void Student::printStudent() {
     gradDate->printDate();
     
     std::cout << "Credits: " << credits << std::endl;
-    std::cout << "------------------------" << std::endl;
+    std::cout << "____________________";
+	std::cout << std::endl
 }
 
 std::string Student::getLastFirst() {
