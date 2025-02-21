@@ -11,18 +11,19 @@ Date::Date(){
 void Date::init(std::string dateString){
 	std::stringstream ss(dateString);
 
-	ss.clear();
-	ss.str("");
-	
 	std::string tDay;
 	std::string tMonth;
 	std::string tYear;
+
+	ss.clear();
+	ss.str(dateString);
 
 	getline(ss, tDay, '/');
 	getline(ss, tMonth, '/');
 	getline(ss, tYear);
 
-
+	ss.clear();
+	ss.str("");
 	
 	ss << tDay << " " << tMonth << " " << tYear;
     ss >> day >> month >> year;
