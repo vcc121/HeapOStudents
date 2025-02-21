@@ -16,6 +16,7 @@ class Student {
 		Date* gradDate;
 	public:
 		Student();
+		Student(std::string studentString);
 		~Student();
 		void init(std::string studentString);
 		void printStudent();
