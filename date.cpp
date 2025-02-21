@@ -6,10 +6,9 @@ Date::Date(){
 	day = 0;
 	month = 0;
 	year = 0;
-	dateString = "";
 }
 
-void Date::init(std::dateString){
+void Date::init(dateString){
 
 	std::string tDay;
 	std::string tMonth;
@@ -32,5 +31,5 @@ void Date::printDate(){
         "July", "August", "September", "October", "November", "December"
     };
 	std::cout << months[month] << " ";
-	std::cout << day << ", " << year << std::end1;
+	std::cout << day << ", " << year << std::endl;
 }
