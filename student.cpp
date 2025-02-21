@@ -15,7 +15,7 @@ Student::Student(){
 }
 
 Student::Student(std::string studentString){
-	Student::init(studentString;
+	Student::init(studentString);
 }
 
 Student::~Student(){
