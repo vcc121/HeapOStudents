@@ -23,3 +23,4 @@ Student::~Student(){
 	delete gradDate;
 	delete address;
 }
+
