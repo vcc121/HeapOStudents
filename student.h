@@ -7,9 +7,9 @@
 
 class Student {
 	private:
-		std::string studentString
-		std::string firstName
-		std::string lastName
+		std::string studentString;
+		std::string firstName;
+		std::string lastName;
 		int credits;
 		Address* address;
 		Date* birthDate;
