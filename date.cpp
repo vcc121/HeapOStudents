@@ -1,5 +1,6 @@
 #include "date.h"
 #include <sstream>
+#include <iostream>
 
 Date::Date(){
 	day = 0;
