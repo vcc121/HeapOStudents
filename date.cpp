@@ -8,25 +8,28 @@ Date::Date(){
 	year = 0;
 }
 
-void Date::init(std::string dateString){
-	std::stringstream ss(dateString);
+void Date::init(std::string dateString) {
+    std::stringstream ss(dateString);
 
-	std::string tDay;
-	std::string tMonth;
-	std::string tYear;
+    std::string tDay, tMonth, tYear;
 
-	ss.clear();
-	ss.str(dateString);
+    // Extracting values from the dateString
+    getline(ss, tMonth, '/');
+    getline(ss, tDay, '/');
+    getline(ss, tYear);
 
-	getline(ss, tDay, '/');
-	getline(ss, tMonth, '/');
-	getline(ss, tYear);
+    // Printing extracted strings before conversion
+    std::cout << "Extracted: " << tDay << " " << tMonth << " " << tYear << std::endl;
 
-	ss.clear();
-	ss.str("");
-	
-	ss << tDay << " " << tMonth << " " << tYear;
+    // Converting to integers
+    ss.clear();
+    ss.str("");  // Clearing any remaining content
+
+    ss << tDay << " " << tMonth << " " << tYear;
     ss >> day >> month >> year;
+
+    // Printing parsed integer values
+    std::cout << "Parsed: " << day << " " << month << " " << year << std::endl;
 }
 
 void Date::printDate(){
