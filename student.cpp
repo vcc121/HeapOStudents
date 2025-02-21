@@ -5,7 +5,7 @@
 #include <sstream>
 
 Student::Student(){
-	studentString "";
+	studentString = "";
 	firstName = "";
 	lastName = "";
 	birthDate = new Date();

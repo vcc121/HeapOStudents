@@ -8,7 +8,8 @@ Date::Date(){
 	year = 0;
 }
 
-void Date::init(dateString){
+void Date::init(std::string dateString){
+	std::stringstream ss(dateString);
 
 	std::string tDay;
 	std::string tMonth;
