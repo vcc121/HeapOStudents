@@ -13,23 +13,17 @@ void Date::init(std::string dateString) {
 
     std::string tDay, tMonth, tYear;
 
-    // Extracting values from the dateString
+
     getline(ss, tMonth, '/');
     getline(ss, tDay, '/');
     getline(ss, tYear);
 
-    // Printing extracted strings before conversion
-    std::cout << "Extracted: " << tDay << " " << tMonth << " " << tYear << std::endl;
 
-    // Converting to integers
     ss.clear();
-    ss.str("");  // Clearing any remaining content
+    ss.str("");
 
     ss << tDay << " " << tMonth << " " << tYear;
     ss >> day >> month >> year;
-
-    // Printing parsed integer values
-    std::cout << "Parsed: " << day << " " << month << " " << year << std::endl;
 }
 
 void Date::printDate(){
