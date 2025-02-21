@@ -22,8 +22,7 @@ void Date::init(std::string dateString){
 	getline(ss, tMonth, '/');
 	getline(ss, tYear);
 
-	ss.clear();
-	ss.str("");
+
 	
 	ss << tDay << " " << tMonth << " " << tYear;
     ss >> day >> month >> year;
