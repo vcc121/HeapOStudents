@@ -1,5 +1,6 @@
 #include "date.h"
 #include "address.h"
+#include "student.h"
 
 #include <iostream>
 #include <sstream>
@@ -24,3 +25,53 @@ Student::~Student(){
 	delete address;
 }
 
+void Student::printStudent() {
+    std::cout << firstName << " " << lastName << " ";
+    address->printAddress();
+    std::cout << std::endl;
+    
+    std::cout << "DOB: ";
+    birthDate->printDate();
+    
+    std::cout << "Grad: ";
+    gradDate->printDate();
+    
+    std::cout << "Credits: " << credits << std::endl;
+    std::cout << "------------------------" << std::endl;
+}
+
+std::string Student::getLastFirst() {
+    std::stringstream ss;
+    ss.clear();
+    ss << lastName << ", " << firstName;
+    return ss.str();
+}
+
+std::string Student::getLastName() {
+    return lastName;
+}
+
+void Student::init(std::string studentString) {
+    std::stringstream ss(studentString);
+
+    std::string street, town, state, zipCode;
+    std::string tBirthDate, tGradDate, tCreditHours;
+
+    getline(ss, firstName, ',');
+    getline(ss, lastName, ',');
+    getline(ss, street, ',');
+    getline(ss, town, ',');
+    getline(ss, state, ',');
+    getline(ss, zipCode, ',');
+    getline(ss, tBirthDate, ',');
+    getline(ss, tGradDate, ',');
+    getline(ss, tCreditHours);
+
+    address->init(street, town, state, zipCode);
+    birthDate->init(tBirthDate);
+    gradDate->init(tGradDate);
+
+    ss.clear();
+    ss.str(tCreditHours);
+    ss >> credits;
+}
