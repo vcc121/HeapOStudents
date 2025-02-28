@@ -15,28 +15,13 @@ std::string menu();
 
 
 void loadStudents(std::vector<Student*>& students) {
-    std::ifstream file("students.csv");
-    if (!file) {
-        std::cerr << "Error: Could not open students.csv\n";
-        return;
-    }
-
+    std::ifstream file("students.csv"); 
     std::string line;
     while (std::getline(file, line)) {
-        std::cout << "Reading line: " << line << std::endl; // Debugging output
-
-        if (line.empty()) continue; // Avoid creating empty students
-
-        // Create new student and initialize
         Student* student = new Student(line);
-        if (student == nullptr) {
-            std::cerr << "Error: Failed to allocate memory for Student\n";
-            continue;
-        }
-
         students.push_back(student);
     }
-
+    
     file.close();
 }
 
