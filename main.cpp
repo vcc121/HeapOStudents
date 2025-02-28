@@ -24,18 +24,25 @@ void loadStudents(std::vector<Student*>& students) {
     file.close();
 }
 
-void showStudentNames(const std::vector<Student*>& students) {
+void showStudentNames(std::vector<Student*>& students) {
     for (Student* s : students) {
         std::cout << s->getLastFirst() << std::endl;;
     }
 }
 
 // Function to print full student records
-void printStudents(const std::vector<Student*>& students) {
+void printStudents(std::vector<Student*>& students) {
     for (Student* s : students) {
         s->printStudent();  // Assuming printStudent() outputs full details
         std::cout << "____________________________________\n";
     }
+}
+
+void delStudents(std::vector<Student*>& students) {
+    for (Student* s : students) {
+        delete s;
+    }
+    students.clear();
 }
 
 void findStudent(std::vector<Student*>& students) {
