@@ -47,28 +47,41 @@ std::string Student::getLastFirst() {
     return ss.str();
 }
 
-
 void Student::init(std::string studentString) {
     std::stringstream ss(studentString);
-
     std::string street, town, state, zipCode;
     std::string tBirthDate, tGradDate, tCreditHours;
 
-    getline(ss, firstName, ',');
-    getline(ss, lastName, ',');
-    getline(ss, street, ',');
-    getline(ss, town, ',');
-    getline(ss, state, ',');
-    getline(ss, zipCode, ',');
-    getline(ss, tBirthDate, ',');
-    getline(ss, tGradDate, ',');
-    getline(ss, tCreditHours);
+    std::cout << "Processing student string: " << studentString << std::endl;
 
+    getline(ss, firstName, ',');
+    std::cout << "First name: " << firstName << std::endl;
+    getline(ss, lastName, ',');
+    std::cout << "Last name: " << lastName << std::endl;
+
+    getline(ss, street, ',');
+    std::cout << "Street: " << street << std::endl;
+    getline(ss, town, ',');
+    std::cout << "Town: " << town << std::endl;
+    getline(ss, state, ',');
+    std::cout << "State: " << state << std::endl;
+    getline(ss, zipCode, ',');
+    std::cout << "ZipCode: " << zipCode << std::endl;
+
+    getline(ss, tBirthDate, ',');
+    std::cout << "Birth date: " << tBirthDate << std::endl;
+    getline(ss, tGradDate, ',');
+    std::cout << "Graduation date: " << tGradDate << std::endl;
+    getline(ss, tCreditHours);
+    std::cout << "Credit Hours: " << tCreditHours << std::endl;
+
+    // Initialize address and dates
     address->init(street, town, state, zipCode);
     birthDate->init(tBirthDate);
     gradDate->init(tGradDate);
 
-    ss.clear();
-    ss.str(tCreditHours);
-    ss >> credits;
+    // Set credits
+    std::stringstream creditStream(tCreditHours);
+    creditStream >> credits;
+    std::cout << "Credits set: " << credits << std::endl;
 }
