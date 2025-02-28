@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <algorithm>
 #include <vector>
 #include "date.h"
@@ -88,6 +89,6 @@ int main() {
         }
     }
 
-    deleteStudents(students);
+    delStudents(students);
     return 0;
 }
