@@ -23,6 +23,20 @@ void loadStudents(std::vector<Student*>& students) {
     file.close();
 }
 
+void showStudentNames(const std::vector<Student*>& students) {
+    for (Student* s : students) {
+        std::cout << s->getLastFirst() << std::endl;;
+    }
+}
+
+// Function to print full student records
+void printStudents(const std::vector<Student*>& students) {
+    for (Student* s : students) {
+        s->printStudent();  // Assuming printStudent() outputs full details
+        std::cout << "____________________________________\n";
+    }
+}
+
 void findStudent(std::vector<Student*>& students) {
     std::string target;
     bool notFound = true;
@@ -41,6 +55,39 @@ void findStudent(std::vector<Student*>& students) {
         std::cout << "No students found with that last name.\n";
     }
 }
- bool compFirst(Student* a, Student* b){
-    return a->getFirstName() < b->getFirstName();
- }
+
+std::string menu() {
+    std::cout << "\n0) quit\n"
+              << "1) print all student names\n"
+              << "2) print all student data\n"
+              << "3) find a student\n"
+              << "please choose 0-3: ";
+    std::string choice;
+    getline(std::cin, choice);
+    return choice;
+}
+
+int main() {
+    std::vector<Student*> students;
+    loadStudents(students);
+
+    bool keepGoing = true;
+    while (keepGoing) {
+        std::string choice = menu();
+
+        if (choice == "0") {
+            keepGoing = false;
+        } else if (choice == "1") {
+            showStudentNames(students);
+        } else if (choice == "2") {
+            printStudents(students);
+        } else if (choice == "3") {
+            findStudent(students);
+        } else {
+            std::cout << "Please enter a valid number\n";
+        }
+    }
+
+    deleteStudents(students);
+    return 0;
+}
